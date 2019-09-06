@@ -1,0 +1,90 @@
+package Database;
+import javax.persistence.*;
+
+import java.io.Serializable;
+
+@Embeddable	
+public class RsQrSumPK implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	@Column(name = "QRSUM_ACQFIID", length = 4)
+	private String qrsumAcqfiid;
+	
+	@Column(name = "QRSUM_ISSFIID", length = 4)
+	private String qrsumIssfiid;
+	
+	@Column(name = "QRSUM_DATE", length =6)
+	private String qrsumDate;
+	
+	@Column(name = "QRSUM_RPT_TYPE", length = 1)
+	private String qrsumRptType;
+	
+	public RsQrSumPK(){
+		
+	}
+
+	public String getQrsumAcqfiid() {
+		return qrsumAcqfiid;
+	}
+
+	public void setQrsumAcqfiid(String qrsumAcqfiid) {
+		this.qrsumAcqfiid = qrsumAcqfiid;
+	}
+
+	public String getQrsumIssfiid() {
+		return qrsumIssfiid;
+	}
+
+	public void setQrsumIssfiid(String qrsumIssfiid) {
+		this.qrsumIssfiid = qrsumIssfiid;
+	}
+
+	public String getQrsumDate() {
+		return qrsumDate;
+	}
+
+	public void setQrsumDate(String qrsumDate) {
+		this.qrsumDate = qrsumDate;
+	}
+	
+	public String getQrsumRptType() {
+		return qrsumRptType;
+	}
+
+	public void setQrsumRptType(String qrsumRptType) {
+		this.qrsumRptType = qrsumRptType;
+	}
+	
+	@Override
+	public int hashCode() {
+	    int hash = 0;
+	    hash += (qrsumAcqfiid != null ? qrsumAcqfiid.hashCode() : 0);
+	    hash += (qrsumIssfiid != null ? qrsumIssfiid.hashCode() : 0);
+	    hash += (qrsumRptType != null ? qrsumRptType.hashCode() : 0);
+	    hash += (qrsumDate != null ? qrsumDate.hashCode() : 0);
+	    return hash;
+	}
+	
+	@Override
+	public boolean equals(Object object) {
+	    if(!(object instanceof RsQrSumPK)) {
+	        return false;
+	    }
+	    RsQrSumPK other = (RsQrSumPK) object;
+	    if((this.qrsumAcqfiid == null && other.qrsumAcqfiid != null) || (this.qrsumAcqfiid != null && !this.qrsumAcqfiid.equals(other.qrsumAcqfiid))) {
+	        return false;
+	    }
+	    if((this.qrsumIssfiid == null && other.qrsumIssfiid != null) || (this.qrsumIssfiid != null && !this.qrsumIssfiid.equals(other.qrsumIssfiid))) {
+	        return false;
+	    }
+	    if((this.qrsumDate == null && other.qrsumDate != null) || (this.qrsumDate != null && !this.qrsumDate.equals(other.qrsumDate))) {
+	        return false;
+	    }
+	    if((this.qrsumRptType == null && other.qrsumRptType != null) || (this.qrsumRptType != null && !this.qrsumRptType.equals(other.qrsumRptType))) {
+	        return false;
+	    }
+	    return true;
+	}
+
+}
+
