@@ -1,0 +1,507 @@
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnPymt with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnPymt
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnPymt
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SPN_PYMT_AMT, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnPymtAmt with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnPymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnPymtAmt
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SPN_REFUND, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnRefund with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnRefund
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnRefund
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SPN_REFUND_AMT, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnRefundAmt with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_STANDARD_PYMT_AMT, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumStandardPymtAmt with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumStandardPymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumStandardPymtAmt
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_STANDARD_PYMT_AMT_SUS, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumStandardPymtAmtSus with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumStandardPymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumStandardPymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_STANDARD_REFUND_AMT, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumStandardRefundAmt with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumStandardRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumStandardRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_STANDARD_REFUND_AMT_SUS, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumStandardRefundAmtSus with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumStandardRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumStandardRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_FEE_PYMT_AMT, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchFeePymtAmt with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchFeePymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchFeePymtAmt
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_FEE_PYMT_AMT_SUS, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchFeePymtAmtSus with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchFeePymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchFeePymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_FEE_REFUND_AMT, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchFeeRefundAmt with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchFeeRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchFeeRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_FEE_REFUND_AMT_SUS, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchFeeRefundAmtSus with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchFeeRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchFeeRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_INTER_FEE_PYMT_AMT, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchInterFeePymtAmt with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchInterFeePymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchInterFeePymtAmt
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_INTER_FEE_PYMT_AMT_SUS, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchInterFeePymtAmtSus with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchInterFeePymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchInterFeePymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_INTER_FEE_REFUND_AMT, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchInterFeeRefundAmt with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchInterFeeRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchInterFeeRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_INTER_FEE_REFUND_AMT_SUS, insertable=true, updatable=true, unique=false}
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchInterFeeRefundAmtSus with lazy=false
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchInterFeeRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchInterFeeRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAcqfiid
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDate
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumIssfiid
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumRptType
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for Version
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for modDate
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for modUser
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppCheck
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppCheckAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppPymt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppPymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppRefund
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecCheck
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecCheckAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecPymt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecPymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecRefund
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumInterFeePymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumInterFeePymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumInterFeeRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumInterFeeRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumServicePymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumServicePymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumServiceRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumServiceRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnCheck
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnCheckAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnPymt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnPymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnRefund
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumStandardPymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumStandardPymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumStandardRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumStandardRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchFeePymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchFeePymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchFeeRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchFeeRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchInterFeePymtAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchInterFeePymtAmtSus
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchInterFeeRefundAmt
+5900 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchInterFeeRefundAmtSus
+5900 [main] DEBUG org.hibernate.cfg.Configuration  - Processing fk mappings (*ToOne and JoinedSubclass)
+5900 [main] DEBUG org.hibernate.cfg.Configuration  - Processing extends queue
+5900 [main] DEBUG org.hibernate.cfg.Configuration  - Processing extends queue
+5900 [main] DEBUG org.hibernate.cfg.Configuration  - Processing collection mappings
+5900 [main] DEBUG org.hibernate.cfg.Configuration  - Processing native query and ResultSetMapping mappings
+5900 [main] DEBUG org.hibernate.cfg.Configuration  - Processing association property references
+5900 [main] DEBUG org.hibernate.cfg.Configuration  - Processing foreign key constraints
+5900 [main] INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+5900 [main] ERROR Reports.ReportQrQ1  - CREATE REPORT QR Q1 FAILED
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration boolean -> org.hibernate.type.BooleanType@47db50c5
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration boolean -> org.hibernate.type.BooleanType@47db50c5
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@47db50c5
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@710726a3
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration true_false -> org.hibernate.type.TrueFalseType@77846d2c
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration yes_no -> org.hibernate.type.YesNoType@2641e737
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration byte -> org.hibernate.type.ByteType@319b92f3
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration byte -> org.hibernate.type.ByteType@319b92f3
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@319b92f3
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration character -> org.hibernate.type.CharacterType@5579bb86
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration char -> org.hibernate.type.CharacterType@5579bb86
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@5579bb86
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration short -> org.hibernate.type.ShortType@17211155
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration short -> org.hibernate.type.ShortType@17211155
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@17211155
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration integer -> org.hibernate.type.IntegerType@6fb0d3ed
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration int -> org.hibernate.type.IntegerType@6fb0d3ed
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@6fb0d3ed
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration long -> org.hibernate.type.LongType@281e3708
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration long -> org.hibernate.type.LongType@281e3708
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Long -> org.hibernate.type.LongType@281e3708
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration float -> org.hibernate.type.FloatType@1da51a35
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration float -> org.hibernate.type.FloatType@1da51a35
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@1da51a35
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration double -> org.hibernate.type.DoubleType@15b3e5b
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration double -> org.hibernate.type.DoubleType@15b3e5b
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@15b3e5b
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@aecb35a
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@aecb35a
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@382db087
+6067 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@382db087
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration string -> org.hibernate.type.StringType@543e710e
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.String -> org.hibernate.type.StringType@543e710e
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration url -> org.hibernate.type.UrlType@2698dc7
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.net.URL -> org.hibernate.type.UrlType@2698dc7
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration date -> org.hibernate.type.DateType@4f51b3e0
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.sql.Date -> org.hibernate.type.DateType@4f51b3e0
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration time -> org.hibernate.type.TimeType@1cab0bfb
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@1cab0bfb
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration timestamp -> org.hibernate.type.TimestampType@dbd940d
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@dbd940d
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@dbd940d
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@6c9f5c0d
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration calendar -> org.hibernate.type.CalendarType@2df32bf7
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2df32bf7
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2df32bf7
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@f4168b8
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration locale -> org.hibernate.type.LocaleType@130f889
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@130f889
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration currency -> org.hibernate.type.CurrencyType@40f08448
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@40f08448
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration timezone -> org.hibernate.type.TimeZoneType@7181ae3f
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@7181ae3f
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration class -> org.hibernate.type.ClassType@1442d7b5
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@1442d7b5
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@d6da883
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@d6da883
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@49c43f4e
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@2d127a61
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration binary -> org.hibernate.type.BinaryType@32a068d1
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration byte[] -> org.hibernate.type.BinaryType@32a068d1
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration [B -> org.hibernate.type.BinaryType@32a068d1
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@282003e1
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@282003e1
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@282003e1
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration image -> org.hibernate.type.ImageType@4df828d7
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration characters -> org.hibernate.type.CharArrayType@31206beb
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration char[] -> org.hibernate.type.CharArrayType@31206beb
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration [C -> org.hibernate.type.CharArrayType@31206beb
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@120d6fe6
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@120d6fe6
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@120d6fe6
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration text -> org.hibernate.type.TextType@37574691
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration blob -> org.hibernate.type.BlobType@38364841
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@38364841
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@146044d7
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration clob -> org.hibernate.type.ClobType@7364985f
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@7364985f
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@3d36e4cd
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration serializable -> org.hibernate.type.SerializableType@b7f23d9
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration object -> org.hibernate.type.ObjectType@4450d156
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@4450d156
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@5e17553a
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@3eb91815
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@56dc1551
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@102cec62
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@74f6c5d8
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@27912e3
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@34b9f960
+6102 [main] DEBUG org.hibernate.type.BasicTypeRegistry  - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@43015c69
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+6102 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory  - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+6102 [main] INFO org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: hibernate.cfg.xml
+6102 [main] INFO org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: hibernate.cfg.xml
+6115 [main] DEBUG org.hibernate.internal.util.xml.DTDEntityResolver  - Trying to resolve system-id [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd]
+6115 [main] WARN org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+6115 [main] DEBUG org.hibernate.internal.util.xml.DTDEntityResolver  - Attempting to resolve on classpath under org/hibernate/
+6115 [main] DEBUG org.hibernate.internal.util.xml.DTDEntityResolver  - Located [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd] in classpath
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - connection.driver_class=org.h2.Driver
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - connection.url=jdbc:h2:mem:mydb
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - connection.username=sa
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - connection.password=
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - connection.pool_size=1
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - dialect=org.hibernate.dialect.H2Dialect
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - current_session_context_class=thread
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - cache.provider_class=org.hibernate.cache.NoCacheProvider
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - show_sql=false
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - hbm2ddl.auto=create
+6120 [main] DEBUG org.hibernate.cfg.Configuration  - Session-factory config [null] named resource [AuditLog.hbm.xml] for mapping
+6120 [main] INFO org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: AuditLog.hbm.xml
+6135 [main] DEBUG org.hibernate.internal.util.xml.DTDEntityResolver  - Trying to resolve system-id [http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd]
+6135 [main] WARN org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+6135 [main] DEBUG org.hibernate.internal.util.xml.DTDEntityResolver  - Attempting to resolve on classpath under org/hibernate/
+6136 [main] DEBUG org.hibernate.internal.util.xml.DTDEntityResolver  - Located [http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd] in classpath
+6140 [main] INFO org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+6140 [main] DEBUG org.hibernate.cfg.Configuration  - Properties: {show_sql=false, java.vendor=Oracle Corporation, sun.java.launcher=SUN_STANDARD, hibernate.connection.url=jdbc:h2:mem:mydb, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, hbm2ddl.auto=create, os.name=Windows 10, sun.boot.class.path=C:\Program Files\Java\jre1.8.0_121\lib\resources.jar;C:\Program Files\Java\jre1.8.0_121\lib\rt.jar;C:\Program Files\Java\jre1.8.0_121\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_121\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_121\lib\jce.jar;C:\Program Files\Java\jre1.8.0_121\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_121\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_121\classes, hibernate.current_session_context_class=thread, sun.desktop=windows, java.vm.specification.vendor=Oracle Corporation, java.runtime.version=1.8.0_121-b13, hibernate.cache.provider_class=org.hibernate.cache.NoCacheProvider, user.name=eprasetyo, connection.driver_class=org.h2.Driver, current_session_context_class=thread, user.language=en, sun.boot.library.path=C:\Program Files\Java\jre1.8.0_121\bin, dialect=org.hibernate.dialect.H2Dialect, java.version=1.8.0_121, user.timezone=Asia/Bangkok, sun.arch.data.model=64, java.endorsed.dirs=C:\Program Files\Java\jre1.8.0_121\lib\endorsed, sun.cpu.isalist=amd64, sun.jnu.encoding=Cp1252, file.encoding.pkg=sun.io, file.separator=\, java.specification.name=Java Platform API Specification, java.class.version=52.0, user.country=US, connection.url=jdbc:h2:mem:mydb, java.home=C:\Program Files\Java\jre1.8.0_121, java.vm.info=mixed mode, os.version=10.0, path.separator=;, connection.password=, java.vm.version=25.121-b13, hibernate.connection.password=, user.variant=, java.awt.printerjob=sun.awt.windows.WPrinterJob, sun.io.unicode.encoding=UnicodeLittle, awt.toolkit=sun.awt.windows.WToolkit, hibernate.connection.username=sa, user.script=, user.home=C:\Users\eprasetyo, java.specification.vendor=Oracle Corporation, hibernate.hbm2ddl.auto=create, java.library.path=C:\Program Files\Java\jre1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_121/bin/server;C:/Program Files/Java/jre1.8.0_121/bin;C:/Program Files/Java/jre1.8.0_121/lib/amd64;D:\oracle_client32\eprasetyo\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;C:\Users\eprasetyo\AppData\Local\Microsoft\WindowsApps;;C:\Users\eprasetyo\eclipse\java-neon\eclipse;;., java.vendor.url=http://java.oracle.com/, hibernate.connection.driver_class=org.h2.Driver, connection.username=sa, java.vm.vendor=Oracle Corporation, hibernate.dialect=org.hibernate.dialect.H2Dialect, java.runtime.name=Java(TM) SE Runtime Environment, sun.java.command=Main.Main, java.class.path=C:\Users\eprasetyo\workspace\Report QR - Hibernate\bin;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\activation.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\ambb-eai-ws-acctsum.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\ambb-eai-ws-custprofile.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\ambb-sms.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\antlr-3.2.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\APBCifSvc.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\APBSmsSvc.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\atlassian-profiling-1.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\bcpg-jdk15on-1.51.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\bcpg-jdk15on-1.52.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\bcprov-jdk15on-1.51.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\bcprov-jdk15on-1.52.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\c3p0-0.9.1.2.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\c3p0-oracle-thin-extras-0.9.1.2.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\cglib-2.2.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\com.springsource.org.apache.commons.logging-1.1.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-beanutils-1.8.3.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-cli-1.3.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-codec-1.6.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-collections-3.2.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-digester-1.7.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-io-1.4.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-lang-2.6.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-logging-1.1.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-net-3.6.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\commons-vfs2-2.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\core-3.4.2.v_883_R34x.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\cron4j-2.2.5.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\csapi.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\db2jcc.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\dom4j-1.6.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-ant-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-api-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-bam-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-clips-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-compiler-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-core-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-decisiontables-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-jsr94-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-mc-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-messenger-jms-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-persistence-jpa-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-process-task-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-templates-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-transformer-jaxb-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-transformer-jxls-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-transformer-smooks-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-transformer-xstream-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-verifier-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\drools-workitems-5.0.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\ehcache-1.5.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\fonts.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\groovy-all-2.3.6.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\iText-2.1.7.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jasperreports-5.6.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jasperreports-applet-5.6.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jasperreports-fonts-5.6.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jasperreports-functions-5.6.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jasperreports-javaflow-5.6.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jasypt-1.5.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\javassist-3.12.0.GA.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\javax.mail.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\javax.persistence.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jcifs-1.3.17.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jconn3.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jdom.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\je-4.0.103.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jfreechart-1.0.12.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jline-0.9.91.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\joda-time-2.4.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jpos.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jsch-0.1.48.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jta-1.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\jtds-1.2.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\junit.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\log4j-1.2.16.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\log4j-1.2.17.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\log4jdbc4-1.2.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\mail.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\mvel2-2.1.3.Final.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\mysql-connector-java-5.1.7-bin.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\ojdbc6.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\ojdbc8.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\ojdbc14.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\org.osgi.core-4.3.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\org.springframework.jdbc-3.0.0.RELEASE.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\poi-3.10.1-20140818.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\PostEden-1.5.3.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\RXTXcomm.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\slf4j-api-1.6.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\slf4j-log4j12-1.6.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\smslib-3.5.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\spring-core-3.2.5.RELEASE.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\spring-dao-2.0.8.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\sqljdbc-1.2.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\velocity-1.4.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\velocity-dep-1.4.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\xercesImpl-2.10.0.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\lib\xml-apis-1.4.01.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\hibernate-libraries\antlr-2.7.7.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\hibernate-libraries\commons-collections4-4.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\hibernate-libraries\dom4j-1.6.1.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\hibernate-libraries\hibernate-commons-annotations-5.0.1.Final.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\hibernate-libraries\hibernate-jpa-2.1-api-1.0.0.Final.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\hibernate-libraries\javassist-3.12.0.GA.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\hibernate-libraries\jboss-logging-3.4.0.Final.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\hibernate-libraries\jboss-transaction-api-1.0.1.GA.jar;C:\Users\eprasetyo\workspace\Report QR - Hibernate\hibernate-libraries\hibernate-core-4.1.6.Final.jar, hibernate.bytecode.use_reflection_optimizer=false, java.vm.specification.name=Java Virtual Machine Specification, java.vm.specification.version=1.8, sun.cpu.endian=little, sun.os.patch.level=, connection.pool_size=1, java.io.tmpdir=C:\Users\EPRASE~1\AppData\Local\Temp\, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, os.arch=amd64, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, java.ext.dirs=C:\Program Files\Java\jre1.8.0_121\lib\ext;C:\Windows\Sun\Java\lib\ext, user.dir=C:\Users\eprasetyo\workspace\Report QR - Hibernate, line.separator=
+, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, cache.provider_class=org.hibernate.cache.NoCacheProvider, file.encoding=Cp1252, java.specification.version=1.8, hibernate.show_sql=false, hibernate.connection.pool_size=1}
+6145 [main] DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl  - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+6145 [main] DEBUG org.hibernate.cfg.Configuration  - Preparing to build session factory with filters : {}
+6145 [main] DEBUG org.hibernate.cfg.Configuration  - Processing hbm.xml files
+6145 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapping class: org.drools.process.audit.ProcessInstanceLog -> ProcessInstanceLog
+6145 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: id -> id
+6145 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: processInstanceId -> processInstanceId
+6145 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: processId -> processId
+6145 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: start -> START_DATE
+6145 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: end -> END_DATE
+6145 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapping class: org.drools.process.audit.NodeInstanceLog -> NodeInstanceLog
+6145 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: id -> id
+6150 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: type -> type
+6150 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: nodeInstanceId -> nodeInstanceId
+6150 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: nodeId -> nodeId
+6150 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: processInstanceId -> processInstanceId
+6150 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: processId -> processId
+6150 [main] DEBUG org.hibernate.cfg.HbmBinder  - Mapped property: date -> DATE
+6150 [main] DEBUG org.hibernate.cfg.Configuration  - Process annotated classes
+6150 [main] DEBUG org.hibernate.cfg.AnnotationBinder  - Binding entity from annotated class: Database.RsQrSum
+6150 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+6150 [main] DEBUG org.hibernate.cfg.AnnotationBinder  - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+6150 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder  - Import with entity name RsQrSum
+6150 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder  - Bind entity Database.RsQrSum on table RS_QRSUM
+6150 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=pk, insertable=true, updatable=true, unique=false}
+6150 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_ACQFIID, insertable=true, updatable=true, unique=false}
+6150 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumAcqfiid with lazy=false
+6150 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumAcqfiid
+6150 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumAcqfiid
+6150 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_DATE, insertable=true, updatable=true, unique=false}
+6150 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumDate with lazy=false
+6150 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumDate
+6150 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumDate
+6150 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_ISSFIID, insertable=true, updatable=true, unique=false}
+6150 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumIssfiid with lazy=false
+6150 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumIssfiid
+6150 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumIssfiid
+6150 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_RPT_TYPE, insertable=true, updatable=true, unique=false}
+6150 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumRptType with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumRptType
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumRptType
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property pk
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=VERSION, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property Version with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for Version
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property Version
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=MOD_DATE, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property modDate with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for modDate
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property modDate
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=MOD_USER, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property modUser with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for modUser
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property modUser
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_APP_CHECK, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumAppCheck with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumAppCheck
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumAppCheck
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_APP_CHECK_AMT, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumAppCheckAmt with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumAppCheckAmt
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumAppCheckAmt
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_APP_PYMT, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumAppPymt with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumAppPymt
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumAppPymt
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_APP_PYMT_AMT, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumAppPymtAmt with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumAppPymtAmt
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumAppPymtAmt
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_APP_REFUND, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumAppRefund with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumAppRefund
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumAppRefund
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_APP_REFUND_AMT, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumAppRefundAmt with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumAppRefundAmt
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumAppRefundAmt
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_DEC_CHECK, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumDecCheck with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumDecCheck
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumDecCheck
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_DEC_CHECK_AMT, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumDecCheckAmt with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumDecCheckAmt
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumDecCheckAmt
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_DEC_PYMT, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumDecPymt with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumDecPymt
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumDecPymt
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_DEC_PYMT_AMT, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumDecPymtAmt with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumDecPymtAmt
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumDecPymtAmt
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_DEC_REFUND, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumDecRefund with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumDecRefund
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumDecRefund
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_DEC_REFUND_AMT, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumDecRefundAmt with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumDecRefundAmt
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumDecRefundAmt
+6155 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_INTER_FEE_PYMT_AMT, insertable=true, updatable=true, unique=false}
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumInterFeePymtAmt with lazy=false
+6155 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumInterFeePymtAmt
+6155 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumInterFeePymtAmt
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_INTER_FEE_PYMT_AMT_SUS, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumInterFeePymtAmtSus with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumInterFeePymtAmtSus
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumInterFeePymtAmtSus
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_INTER_FEE_REFUND_AMT, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumInterFeeRefundAmt with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumInterFeeRefundAmt
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumInterFeeRefundAmt
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_INTER_FEE_REFUND_AMT_SUS, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumInterFeeRefundAmtSus with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumInterFeeRefundAmtSus
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumInterFeeRefundAmtSus
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SERVICE_PYMT_AMT, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumServicePymtAmt with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumServicePymtAmt
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumServicePymtAmt
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SERVICE_PYMT_AMT_SUS, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumServicePymtAmtSus with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumServicePymtAmtSus
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumServicePymtAmtSus
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SERVICE_REFUND_AMT, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumServiceRefundAmt with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumServiceRefundAmt
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumServiceRefundAmt
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SERVICE_REFUND_AMT_SUS, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumServiceRefundAmtSus with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumServiceRefundAmtSus
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumServiceRefundAmtSus
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SPN_CHECK, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnCheck with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnCheck
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnCheck
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SPN_CHECK_AMT, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnCheckAmt with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnCheckAmt
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnCheckAmt
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SPN_PYMT, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnPymt with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnPymt
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnPymt
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SPN_PYMT_AMT, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnPymtAmt with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnPymtAmt
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnPymtAmt
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SPN_REFUND, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnRefund with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnRefund
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnRefund
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SPN_REFUND_AMT, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSpnRefundAmt with lazy=false
+6160 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSpnRefundAmt
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSpnRefundAmt
+6160 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_STANDARD_PYMT_AMT, insertable=true, updatable=true, unique=false}
+6160 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumStandardPymtAmt with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumStandardPymtAmt
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumStandardPymtAmt
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_STANDARD_PYMT_AMT_SUS, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumStandardPymtAmtSus with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumStandardPymtAmtSus
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumStandardPymtAmtSus
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_STANDARD_REFUND_AMT, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumStandardRefundAmt with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumStandardRefundAmt
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumStandardRefundAmt
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_STANDARD_REFUND_AMT_SUS, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumStandardRefundAmtSus with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumStandardRefundAmtSus
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumStandardRefundAmtSus
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_FEE_PYMT_AMT, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchFeePymtAmt with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchFeePymtAmt
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchFeePymtAmt
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_FEE_PYMT_AMT_SUS, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchFeePymtAmtSus with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchFeePymtAmtSus
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchFeePymtAmtSus
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_FEE_REFUND_AMT, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchFeeRefundAmt with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchFeeRefundAmt
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchFeeRefundAmt
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_FEE_REFUND_AMT_SUS, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchFeeRefundAmtSus with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchFeeRefundAmtSus
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchFeeRefundAmtSus
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_INTER_FEE_PYMT_AMT, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchInterFeePymtAmt with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchInterFeePymtAmt
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchInterFeePymtAmt
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_INTER_FEE_PYMT_AMT_SUS, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchInterFeePymtAmtSus with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchInterFeePymtAmtSus
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchInterFeePymtAmtSus
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_INTER_FEE_REFUND_AMT, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchInterFeeRefundAmt with lazy=false
+6165 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchInterFeeRefundAmt
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchInterFeeRefundAmt
+6165 [main] DEBUG org.hibernate.cfg.Ejb3Column  - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(RS_QRSUM), mappingColumn=QRSUM_SWITCH_INTER_FEE_REFUND_AMT_SUS, insertable=true, updatable=true, unique=false}
+6165 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - MetadataSourceProcessor property qrsumSwitchInterFeeRefundAmtSus with lazy=false
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - building SimpleValue for qrsumSwitchInterFeeRefundAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder  - Building property qrsumSwitchInterFeeRefundAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAcqfiid
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDate
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumIssfiid
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumRptType
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for Version
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for modDate
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for modUser
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppCheck
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppCheckAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppPymt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppPymtAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppRefund
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumAppRefundAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecCheck
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecCheckAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecPymt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecPymtAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecRefund
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumDecRefundAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumInterFeePymtAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumInterFeePymtAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumInterFeeRefundAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumInterFeeRefundAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumServicePymtAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumServicePymtAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumServiceRefundAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumServiceRefundAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnCheck
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnCheckAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnPymt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnPymtAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnRefund
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSpnRefundAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumStandardPymtAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumStandardPymtAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumStandardRefundAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumStandardRefundAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchFeePymtAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchFeePymtAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchFeeRefundAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchFeeRefundAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchInterFeePymtAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchInterFeePymtAmtSus
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchInterFeeRefundAmt
+6170 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder  - Setting SimpleValue typeName for qrsumSwitchInterFeeRefundAmtSus
+6170 [main] DEBUG org.hibernate.cfg.Configuration  - Processing fk mappings (*ToOne and JoinedSubclass)
+6170 [main] DEBUG org.hibernate.cfg.Configuration  - Processing extends queue
+6170 [main] DEBUG org.hibernate.cfg.Configuration  - Processing extends queue
+6170 [main] DEBUG org.hibernate.cfg.Configuration  - Processing collection mappings
+6170 [main] DEBUG org.hibernate.cfg.Configuration  - Processing native query and ResultSetMapping mappings
+6170 [main] DEBUG org.hibernate.cfg.Configuration  - Processing association property references
+6170 [main] DEBUG org.hibernate.cfg.Configuration  - Processing foreign key constraints
+6170 [main] INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+6170 [main] ERROR Reports.ReportQrQ1  - CREATE REPORT QR Q1 FAILED
+6170 [main] INFO Main.Main  - =============================END REPORT QR=============================
