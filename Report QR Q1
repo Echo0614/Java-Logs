@@ -1,49 +1,37 @@
 package Reports;
 
 import java.io.File;
-import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
-import java.util.Set;
-
-import javax.naming.NamingException;
-import javax.naming.Reference;
-
 import org.apache.log4j.Logger;
-import org.hibernate.Cache;
-import org.hibernate.HibernateException;
-import org.hibernate.Interceptor;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.StatelessSession;
-import org.hibernate.TypeHelper;
-import org.hibernate.classic.Session;
-import org.hibernate.engine.FilterDefinition;
-import org.hibernate.metadata.ClassMetadata;
-import org.hibernate.metadata.CollectionMetadata;
-import org.hibernate.stat.Statistics;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 import Database.PrsTranQr;
 import Database.RsBankQr;
-import Database.RsQrsum;
+import Database.RsQrSum;
+import Database.RsQrSumPK;
 import Parameter.Constant;
 import Parameter.Parameter;
-import Utilities.Configuration;
+import Utilities.Writer;
 import Utilities.DBUtil;
-import Utilities.FormatterUtil;
+import Utilities.FDUtil;
 import Utilities.ReportUtil;
-import Utilities.Transaction;
+import Utilities.TransactionCalculator;
 
-public class ReportQrQ1 {
+public class ReportQrQ1{
 
 	private static final Logger log = Logger.getLogger(ReportQrQ1.class);
 	static Parameter appParam = new Parameter();
-	private static DBUtil dbUtilDest = null;
 	
 	private static long subTotAppPymt;
 	private static long subTotAppRefund;
@@ -64,17 +52,18 @@ public class ReportQrQ1 {
 	private static BigDecimal subTotSpnPymtAmt;
 	private static BigDecimal subTotSpnRefundAmt;
 	private static BigDecimal subTotSpnCheckAmt;
-
-	private static BigDecimal bigTemp = new BigDecimal(0);
+	private static BigDecimal zero = new BigDecimal(0);
 	
-	public ReportQrQ1() {
-
-		dbUtilDest = null;
-
+	private static DBUtil dbUtilDest = null;
+	
+	public ReportQrQ1(){
+		
+		dbUtilDest =  null;
+		
 		Date dateNow = new Date();
 		DateFormat date = new SimpleDateFormat("yyMMdd");
 		String fileDate = (appParam.getFileDate().equals("0")) ? date.format(dateNow) : appParam.getFileDate();
-		String prevDate = FormatterUtil.getPrevDate(FormatterUtil.convertStringToDate(fileDate, "yyMMdd"), 1);
+		String prevDate = FDUtil.getPrevDate(FDUtil.convertStringToDate(fileDate, "yyMMdd"), 1);
 		int pageNum;
 		int recNum;
 		int rawCounter;
@@ -93,9 +82,10 @@ public class ReportQrQ1 {
 		String BankQrIss = appParam.getBankIssQR();
 		String fileDestPath = appParam.getDestPath();
 		String conn = appParam.getConnection();
-		String[] BankQrAcqSplit = BankQrAcq.split(",");
-		String[] BankQrIssSplit = BankQrIss.split(",");
-
+		String [] BankQrAcqSplit = BankQrAcq.split(",");
+		String [] BankQrIssSplit = BankQrIss.split(",");
+		
+		//OPEN DB CONNECTION
 		try {
 			if (dbUtilDest == null) {
 				dbUtilDest = DBUtil.getInstance(conn);
@@ -106,212 +96,303 @@ public class ReportQrQ1 {
 		// PROCESS STARTED
 		log.info("START CREATE REPORT QR Q1");
 
-		for (int x = 0; x < BankQrIssSplit.length; x++) {
+		for(int x = 0; x < BankQrIssSplit.length; x++){
 			pageNum = 1;
 			recNum = 1;
 
-			try {
-				rsBankQrIss = DBUtil.getRsBankQr(BankQrIssSplit[x]);
+try {
+	rsBankQrIss = DBUtil.getRsBankQr(BankQrIssSplit[x]);
 
-				File FileQ1 = new File(fileDestPath + rsBankQrIss.getBankQrCode() + "//" + fileName + ".txt");
-				String ReportQ1 = String.valueOf(FileQ1);
-				file = new File(ReportQ1);
-				if (file.exists()) {
-					file.delete();
-				}
+	File FileQ1 = new File(fileDestPath + rsBankQrIss.getBankQrCode() + "//" + fileName + ".txt");
+	String ReportQ1 = String.valueOf(FileQ1);
+	file = new File(ReportQ1);
+	if (file.exists()) {	
+		file.delete();
+	}
 
-				File FileRawQ1 = new File(fileDestPath + rsBankQrIss.getBankQrCode() + "//" + fileNameRaw + ".txt");
-				String ReportRawQ1 = String.valueOf(FileRawQ1);
-				fileRaw = new File(ReportRawQ1);
-				if (fileRaw.exists()) {
-					fileRaw.delete();
-				}
-				ReportUtil.createRawHeader(ReportRawQ1, "B24-QI01");
+	File FileRawQ1 = new File(fileDestPath + rsBankQrIss.getBankQrCode() + "//" + fileNameRaw + ".txt");
+	String ReportRawQ1 = String.valueOf(FileRawQ1);
+	fileRaw = new File(ReportRawQ1);
+	if (fileRaw.exists()) {
+		fileRaw.delete();
+	}
+	ReportUtil.createRawHeader(ReportRawQ1, "B24-QI01");
 
-				for (int y = 0; y < BankQrAcqSplit.length; y++) {
-					if (!BankQrAcqSplit[y].equals(BankQrIssSplit[x])) {
+	for (int y = 0; y < BankQrAcqSplit.length; y++){
+		if (!BankQrAcqSplit[y].equals(BankQrIssSplit[x])){
 
-						resetTotal();
-						recNum = 1;
-						pageNum = 1;
-						rawCounter = 1;
+			resetTotal();
+			recNum = 1;
+			pageNum = 1;
+			rawCounter = 1;
 
-						rsBankQrAcq = DBUtil.getRsBankQr(BankQrAcqSplit[y]);
-//						prsTranQr = DBUtil.getPrsTranQr(fileDate, rsBankQrIss.getBankQrFiidIss(),rsBankQrAcq.getBankQrFiidAcq());
+			rsBankQrAcq = DBUtil.getRsBankQr(BankQrAcqSplit[y]);
+			prsTranQr = DBUtil.getPrsTranQr(fileDate, rsBankQrIss.getBankQrFiidIss(), rsBankQrAcq.getBankQrFiidAcq());
 
-						if (prsTranQr.size() > 0) {
+			if (prsTranQr.size() > 0) {
 
-							for (int i = 0; i < prsTranQr.size(); i++) {
+				for (int i = 0; i < prsTranQr.size(); i++) {
 
-								if (recNum % 25 == 1) {
-									ReportUtil.createHeaderQ1Q4(ReportQ1, "B24-QI01", pageNum,rsBankQrAcq.getBankQrDesc(), rsBankQrIss.getBankQrDesc());
-									pageNum++;
-								}
+					if (recNum % 25 == 1) {
+						ReportUtil.createHeaderQ1Q4(ReportQ1, "B24-QI01", pageNum,rsBankQrAcq.getBankQrDesc(), rsBankQrIss.getBankQrDesc());
+						pageNum++;
+					}
 
-								PrsTranQr ptq = prsTranQr.get(i);
+					PrsTranQr ptq = prsTranQr.get(i);
 
-								if (prsTranQr != null) {
-									createQ1(fileDate.substring(2), ptq, ReportQ1, ReportRawQ1, recNum, rawCounter,rsBankQrAcq, rsBankQrIss);
-									rawCounter++;
-								}
-								recNum++;
-								if ((recNum - 1) % 25 == 0) {
-									ReportUtil.createSeparator(ReportQ1);
-								}
-							}
-							if ((recNum - 1) % 25 != 0) {
-								ReportUtil.createSeparator(ReportQ1);
-							}
-						} else {
-							ReportUtil.createHeaderQ1Q4(ReportQ1, "B24-QI01", pageNum, rsBankQrAcq.getBankQrDesc(),rsBankQrIss.getBankQrDesc());
-							ReportUtil.enter(ReportQ1);
-							pageNum++;
-						}
-						ReportUtil.createFooterQ1Q4(ReportQ1, subTotAppPymt + subTotAppRefund + subTotAppCheck,subTotDecPymt + subTotDecRefund + subTotDecCheck,((subTotAppPymtAmt.add(subTotSpnPymtAmt)).subtract((subTotAppRefundAmt.add(subTotSpnRefundAmt)))),+subTotSpnPymt + subTotSpnRefund + subTotSpnCheck);
+					if (prsTranQr != null) {
+						createQ1(fileDate.substring(2), ptq, ReportQ1, ReportRawQ1, recNum, rawCounter, rsBankQrAcq, rsBankQrIss);
+						rawCounter++;
+					}
+					recNum++;
+					if ((recNum - 1) % 25 == 0) {
 						ReportUtil.createSeparator(ReportQ1);
-
-						String bankIss = rsBankQrIss.getBankQrFiidIss();
-						String bankAcq = rsBankQrAcq.getBankQrFiidAcq();
-						
-						//logic insert dan updatenya pake size udah bener, udah dicek
-						ArrayList<RsQrsum> rsQrsum = DBUtil.getRsQrsum(fileDate, bankAcq, bankIss,"I");
-						
-						if(rsQrsum.size() == 0){
-							DBUtil.insertToRsQrSum
-							(fileDate, bankAcq, bankIss, "I",
-							 bigTemp, bigTemp, bigTemp, bigTemp, bigTemp, bigTemp,bigTemp, bigTemp, bigTemp, bigTemp,
-							 subTotAppPymt, subTotAppRefund, subTotAppCheck,
-							 subTotDecPymt, subTotDecRefund, subTotDecCheck,
-							 subTotSpnPymt, subTotSpnRefund, subTotSpnCheck,
-							 subTotAppPymtAmt, subTotAppRefundAmt, subTotAppCheckAmt,
-							 subTotDecPymtAmt, subTotDecRefundAmt,subTotDecCheckAmt,
-							 subTotSpnPymtAmt,subTotSpnRefundAmt, subTotSpnCheckAmt,
-							 bigTemp, bigTemp, bigTemp, bigTemp, bigTemp, bigTemp, bigTemp, bigTemp, bigTemp, bigTemp);
-						}
-						else
-						{
-							System.out.println("Saya mau update :)");
-						}
 					}
 				}
-				log.info("COMPLETE CREATE REPORT QR Q1 - ISSUER: " + rsBankQrIss.getBankQrFiidIss());
-			} catch (Exception e) {
+				if ((recNum - 1) % 25 != 0) {
+					ReportUtil.createSeparator(ReportQ1);
+				}
+			} else {
+				ReportUtil.createHeaderQ1Q4(ReportQ1, "B24-QI01", pageNum, rsBankQrAcq.getBankQrDesc(),rsBankQrIss.getBankQrDesc());
+				ReportUtil.enter(ReportQ1);
+				pageNum++;
+			}
+			ReportUtil.createFooterQ1Q4(ReportQ1, subTotAppPymt + subTotAppRefund + subTotAppCheck, subTotDecPymt + subTotDecRefund + subTotDecCheck, ((subTotAppPymtAmt.add(subTotSpnPymtAmt)).subtract((subTotAppRefundAmt.add(subTotSpnRefundAmt)))), +subTotSpnPymt + subTotSpnRefund + subTotSpnCheck);
+			ReportUtil.createSeparator(ReportQ1);					
+//GET RS QRSUM			
+			RsQrSumPK rsQrSumPK = new RsQrSumPK();
+			rsQrSumPK.setQrsumDate(prevDate.substring(2));
+			rsQrSumPK.setQrsumIssfiid(rsBankQrIss.getBankQrFiidIss());
+			rsQrSumPK.setQrsumAcqfiid(rsBankQrAcq.getBankQrFiidAcq());
+			rsQrSumPK.setQrsumRptType("I");
 
+			RsQrSum rsQrSum = null;
+
+			Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(RsQrSum.class);
+			ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).buildServiceRegistry();
+			SessionFactory sf = con.buildSessionFactory(reg);
+
+			Session select = sf.openSession();
+			select.beginTransaction();
+
+			try{
+			Query querySelect = select.createQuery("FROM RS_QRSUM WHERE pk = 'rsQrSumPK'");
+			querySelect.setParameter("rsQrSumPK", rsQrSumPK);
+
+			rsQrSum = (RsQrSum)querySelect.uniqueResult(); 
+			select.getTransaction().commit();
+			select.close();
+
+			}catch(Exception e)
+			{
+				System.out.println("No Value Found");
+				throw e;
+			}
+
+//IF NULL INSERT						
+			if(rsQrSum == null)
+			{
+				Session insert = sf.openSession();
+				insert.beginTransaction();
+
+				RsQrSumPK rsQrSumNewPK = new RsQrSumPK();
+				rsQrSumNewPK.setQrsumDate(prevDate.substring(2));
+				rsQrSumNewPK.setQrsumIssfiid(rsBankQrIss.getBankQrFiidIss());
+				rsQrSumNewPK.setQrsumAcqfiid(rsBankQrAcq.getBankQrFiidAcq());
+				rsQrSumNewPK.setQrsumRptType("I");							
+
+				RsQrSum rsQrSumNew = new RsQrSum();
+				rsQrSumNew.setPk(rsQrSumNewPK);
+				rsQrSumNew.setQrsumAppPymt(subTotAppPymt);
+				rsQrSumNew.setQrsumAppRefund(subTotAppRefund);
+				rsQrSumNew.setQrsumAppCheck(subTotAppCheck);
+				rsQrSumNew.setQrsumDecPymt(subTotDecPymt);
+				rsQrSumNew.setQrsumDecRefund(subTotDecRefund);
+				rsQrSumNew.setQrsumDecCheck(subTotDecCheck);
+				rsQrSumNew.setQrsumSpnPymt(subTotSpnPymt);
+				rsQrSumNew.setQrsumSpnRefund(subTotSpnRefund);
+				rsQrSumNew.setQrsumSpnCheck(subTotSpnCheck);	
+				rsQrSumNew.setQrsumAppPymtAmt(subTotAppPymtAmt);
+				rsQrSumNew.setQrsumAppRefundAmt(subTotAppRefundAmt);
+				rsQrSumNew.setQrsumAppCheckAmt(subTotAppCheckAmt);
+				rsQrSumNew.setQrsumDecPymtAmt(subTotDecPymtAmt);
+				rsQrSumNew.setQrsumDecRefundAmt(subTotDecRefundAmt);
+				rsQrSumNew.setQrsumDecCheckAmt(subTotDecCheckAmt);
+				rsQrSumNew.setQrsumSpnPymtAmt(subTotSpnPymtAmt);
+				rsQrSumNew.setQrsumSpnRefundAmt(subTotSpnRefundAmt);
+				rsQrSumNew.setQrsumSpnCheckAmt(subTotSpnCheckAmt);
+				storeZero(rsQrSumNew, zero);
+
+				insert.save(rsQrSumNew);
+				insert.getTransaction().commit();
+				insert.close();
+			}
+//ELSE UPDATE
+			else
+			{
+				Session update = sf.openSession();
+				update.beginTransaction();
+
+				Query queryUpdate = update.createQuery
+				("UPDATE RS_QRSUM SET QRSUM_APP_PYMT = 'appPymt', QRSUM_APP_REFUND = 'appRefund', QRSUM_APP_CHECK = 'appCheck', "
+							       + "QRSUM_DEC_PYMT = 'decPymt', QRSUM_DEC_REFUND = 'decRefund', QRSUM_DEC_CHECK = 'decCheck', "
+						       + "QRSUM_SPN_PYMT = 'spnPymt', QRSUM_SPN_REFUND = 'spnRefund', QRSUM_SPN_CHECK = 'spnCheck', "
+						       + "QRSUM_APP_PYMT_AMT = 'appPymtAmt', QRSUM_APP_REFUND_AMT = 'appRefundAmt', QRSUM_APP_CHECK_AMT = 'appCheckAmt', "
+						       + "QRSUM_DEC_PYMT_AMT = 'decPymtAmt', QRSUM_DEC_REFUND_AMT = 'decRefundAmt', QRSUM_DEC_CHECK_AMT = 'decCheckAmt', "
+						       + "QRSUM_SPN_PYMT_AMT = 'spnPymtAmt', QRSUM_SPN_REFUND_AMT = 'spnRefundAmt', QRSUM_SPN_CHECK_AMT = 'spnCheckAmt', "
+						       + "WHERE QRSUM_DATE = 'qrsumDate' AND QRSUM_ISSFIID = 'issFiid' AND QRSUM_ACQFIID = 'acqFiid' AND QRSUM_RPT_TYPE = 'rptType'");
+
+				queryUpdate.setParameter("qrsumDate", prevDate.substring(2));
+				queryUpdate.setParameter("issFiid", rsBankQrIss.getBankQrFiidIss());
+				queryUpdate.setParameter("acqFiid", rsBankQrAcq.getBankQrFiidAcq());
+				queryUpdate.setParameter("rptType", "I");
+				queryUpdate.setParameter("appPymt", subTotAppPymt);	
+				queryUpdate.setParameter("appRefund", subTotAppRefund);	
+				queryUpdate.setParameter("appCheck", subTotAppCheck);	
+				queryUpdate.setParameter("decPymt", subTotDecPymt);
+				queryUpdate.setParameter("decRefund", subTotDecRefund);
+				queryUpdate.setParameter("decCheck", subTotDecCheck);
+				queryUpdate.setParameter("spnPymt", subTotSpnPymt);
+				queryUpdate.setParameter("spnRefund", subTotSpnRefund);
+				queryUpdate.setParameter("spnCheck", subTotSpnCheck);
+
+				queryUpdate.setParameter("appPymtAmt", subTotAppPymtAmt);
+				queryUpdate.setParameter("appRefundAmt", subTotAppRefundAmt);
+				queryUpdate.setParameter("appCheckAmt", subTotAppCheckAmt);
+				queryUpdate.setParameter("decPymtAmt", subTotDecPymtAmt);
+				queryUpdate.setParameter("decRefundAmt", subTotDecRefundAmt);
+				queryUpdate.setParameter("decCheckAmt", subTotDecCheckAmt);
+				queryUpdate.setParameter("spnPymtAmt", subTotSpnPymtAmt);
+				queryUpdate.setParameter("spnRefundAmt", subTotSpnRefundAmt);
+				queryUpdate.setParameter("spnCheckAmt", subTotSpnCheckAmt);
+
+				update.update(rsQrSum);
+				update.getTransaction().commit();
+				update.close();
+			}	
+					}
+				}
+				log.info("COMPLETE CREATE REPORT QR Q1 - ISSUER: " + rsBankQrIss.getBankQrFiidIss() + " AND ACQUIRER: " + rsBankQrAcq.getBankQrFiidAcq());
+			} catch (Exception e) {
+				log.error("CREATE REPORT QR Q1 FAILED"); 
 			}
 		}
-
 	}
 
-	// CREATE Q1 CONTENT
-	public static void createQ1(String fileDate, PrsTranQr ptq, String fileName, String fileNameRaw, int recNum,
-			int rawCounter, RsBankQr rsBankQrAcq, RsBankQr rsBankQrIss) throws SQLException {
-
-		BigDecimal amount = ptq.getAmount() == null ? new BigDecimal(0)
-				: FormatterUtil.formatCurrencyWithCent(new BigDecimal(ptq.getAmount()), 2);
-		BigDecimal convFee = ptq.getConvenienceFee() == null ? new BigDecimal(0)
-				: FormatterUtil.formatCurrencyWithCent(new BigDecimal(ptq.getConvenienceFee().substring(2)), 2);
+//CREATE Q1
+	public static void createQ1(String fileDate, PrsTranQr ptq, String fileName, String fileNameRaw, int recNum, int rawCounter, RsBankQr rsBankQrAcq, RsBankQr rsBankQrIss) throws SQLException{
+		
+		BigDecimal amount  = ptq.getAmount()==null ? new BigDecimal(0): FDUtil.formatCurrencyWithCent(new BigDecimal(ptq.getAmount()),2);
+		BigDecimal convFee = ptq.getConvenienceFee()==null ? new BigDecimal(0): FDUtil.formatCurrencyWithCent(new BigDecimal(ptq.getConvenienceFee().substring(2)),2);
 		String MTI = "0420".equals(ptq.getMessageType()) ? "0210" : ptq.getMessageType();
-
-		Map<String, Object> resultCalcStat = Transaction.calculateStatusQr(ptq.getMessageType(), ptq.getRtCode(),
-				ptq.getProcCode().substring(0, 2), amount, convFee, ptq.getRspCode().trim());
+		
+		Map<String, Object> resultCalcStat = TransactionCalculator.calculateStatusQr(ptq.getMessageType(),ptq.getRtCode(),ptq.getProcCode().substring(0,2),amount,convFee,ptq.getRspCode().trim());
 		StringBuilder str = new StringBuilder();
 		str.append("\r\n");
-		str.append(FormatterUtil.getPadLeft(String.valueOf(recNum), 8, ' '));
-		str.append(FormatterUtil.getPadLeft(FormatterUtil.formatDateStringRpt(ptq.getTransactionDate()), 10, ' '));
-		str.append(FormatterUtil.getPadLeft(FormatterUtil.formatTimeString(ptq.getTransactionTime()), 10, ' ')
-				+ FormatterUtil.spaceFiller(2));
-		str.append(FormatterUtil.getPadLeft(ptq.getProcCode(), 2, ' ') + "   ");
-		str.append(FormatterUtil.getPadLeft(MTI, 4, ' ') + FormatterUtil.spaceFiller(5));
-		str.append(FormatterUtil.getPadRight(
-				"26".equals(ptq.getProcCode().substring(0, 2)) || "36".equals(ptq.getProcCode().substring(0, 2))
-						? ptq.getFromAccountId() : ptq.getPan(),
-				19, ' ') + FormatterUtil.spaceFiller(13));
-		str.append(FormatterUtil.getPadLeft(FormatterUtil.formatAmount(String.valueOf(amount), 2), 14, ' ')
-				+ FormatterUtil.spaceFiller(9));
-		str.append(FormatterUtil.getPadLeft(FormatterUtil.formatAmount(String.valueOf(convFee), 2), 12, ' ')
-				+ FormatterUtil.spaceFiller(11));
-
-		str.append(FormatterUtil.getPadRight(ptq.getRtCode(), 4, ' ') + FormatterUtil.spaceFiller(5));
-		str.append(FormatterUtil.getPadRight(ptq.getAuthResp(), 6, ' ') + FormatterUtil.spaceFiller(4));
-		str.append(FormatterUtil.getPadLeft(ptq.getStan(), 6, ' '));
+		str.append(FDUtil.getPadLeft(String.valueOf(recNum), 8, ' '));
+		str.append(FDUtil.getPadLeft(FDUtil.formatDateStringRpt(ptq.getTransactionDate()), 10, ' '));
+		str.append(FDUtil.getPadLeft(FDUtil.formatTimeString(ptq.getTransactionTime()), 10, ' ')+ FDUtil.spaceFiller(2));
+		str.append(FDUtil.getPadLeft(ptq.getProcCode(), 2, ' ')+ "   ");
+		str.append(FDUtil.getPadLeft(MTI, 4, ' ')+ FDUtil.spaceFiller(5));
+		str.append(FDUtil.getPadRight("26".equals(ptq.getProcCode().substring(0, 2)) || "36".equals(ptq.getProcCode().substring(0,2))?ptq.getFromAccountId():ptq.getPan(),19,' ')+ FDUtil.spaceFiller(13));
+		str.append(FDUtil.getPadLeft(FDUtil.formatAmount(String.valueOf(amount), 2),14,' ')+ FDUtil.spaceFiller(9));
+		str.append(FDUtil.getPadLeft(FDUtil.formatAmount(String.valueOf(convFee), 2),12,' ')+ FDUtil.spaceFiller(11));
+		
+		str.append(FDUtil.getPadRight(ptq.getRtCode(), 4, ' ')+ FDUtil.spaceFiller(5));
+		str.append(FDUtil.getPadRight(ptq.getAuthResp(), 6, ' ')+ FDUtil.spaceFiller(4));
+		str.append(FDUtil.getPadLeft(ptq.getStan(), 6, ' '));
 		str.append("\r\n");
-		str.append(FormatterUtil.getPadLeft((String) resultCalcStat.get(Constant.REPORT_STATUS_QR), 6, ' ')
-				+ FormatterUtil.spaceFiller(2));
-		str.append(FormatterUtil.getPadLeft(ptq.getRspCode().trim(), 2, ' ') + FormatterUtil.spaceFiller(5));
-		str.append(FormatterUtil.getPadLeft(ptq.getReversalCode(), 2, ' ') + FormatterUtil.spaceFiller(3));
-		str.append(FormatterUtil.getPadLeft(ptq.getRetrievalReferenceNr(), 12, ' ') + FormatterUtil.spaceFiller(3));
-		str.append(FormatterUtil.getPadRight(ptq.getTerminalId(), 18, ' '));
-		str.append(FormatterUtil.getPadRight(
-				"26".equals(ptq.getProcCode().substring(0, 2)) || "36".equals(ptq.getProcCode().substring(0, 2))
-						? ptq.getPan() : ptq.getFromAccountId(),
-				22, ' ') + FormatterUtil.spaceFiller(12));
-		str.append(FormatterUtil.getPadRight(ptq.getMerchantCategory(), 6, ' '));
-		str.append(FormatterUtil.getPadRight(ptq.getInvoiceData(), 24, ' '));
-		str.append(FormatterUtil.getPadRight(ptq.getMerchantNameLoc(), 25, ' '));
-
-		// amount
-		if (!"1".equals(ptq.getReversalFlag())) {
-			subTotAppPymtAmt = subTotAppPymtAmt.add((BigDecimal) resultCalcStat.get(Constant.TOTAL_APP_PYMT_AMT));
-			subTotAppRefundAmt = subTotAppRefundAmt.add((BigDecimal) resultCalcStat.get(Constant.TOTAL_APP_REFUND_AMT));
-			subTotAppCheckAmt = subTotAppCheckAmt.add((BigDecimal) resultCalcStat.get(Constant.TOTAL_APP_CHECK_AMT));
-			subTotDecPymtAmt = subTotDecPymtAmt.add((BigDecimal) resultCalcStat.get(Constant.TOTAL_REJ_PYMT_AMT));
-			subTotDecRefundAmt = subTotDecRefundAmt.add((BigDecimal) resultCalcStat.get(Constant.TOTAL_REJ_REFUND_AMT));
-			subTotDecCheckAmt = subTotDecCheckAmt.add((BigDecimal) resultCalcStat.get(Constant.TOTAL_REJ_CHECK_AMT));
-			subTotSpnPymtAmt = subTotSpnPymtAmt.add((BigDecimal) resultCalcStat.get(Constant.TOTAL_SPN_PYMT_AMT));
-			subTotSpnRefundAmt = subTotSpnRefundAmt.add((BigDecimal) resultCalcStat.get(Constant.TOTAL_SPN_REFUND_AMT));
-			subTotSpnCheckAmt = subTotSpnCheckAmt.add((BigDecimal) resultCalcStat.get(Constant.TOTAL_SPN_CHECK_AMT));
+		str.append(FDUtil.getPadLeft((String)resultCalcStat.get(Constant.REPORT_STATUS_QR), 6, ' ') + FDUtil.spaceFiller(2));	
+		str.append(FDUtil.getPadLeft(ptq.getRspCode().trim(), 2, ' ') + FDUtil.spaceFiller(5));
+		str.append(FDUtil.getPadLeft(ptq.getReversalCode(), 2, ' ') + FDUtil.spaceFiller(3));
+		str.append(FDUtil.getPadLeft(ptq.getRetrievalReferenceNr(), 12, ' ') + FDUtil.spaceFiller(3));
+		str.append(FDUtil.getPadRight(ptq.getTerminalId(), 18, ' '));
+		str.append(FDUtil.getPadRight("26".equals(ptq.getProcCode().substring(0,2)) || "36".equals(ptq.getProcCode().substring(0,2))?ptq.getPan():ptq.getFromAccountId(), 22, ' ') + FDUtil.spaceFiller(12));
+		str.append(FDUtil.getPadRight(ptq.getMerchantCategory(), 6, ' '));
+		str.append(FDUtil.getPadRight(ptq.getInvoiceData(), 24, ' '));
+		str.append(FDUtil.getPadRight(ptq.getMerchantNameLoc(),25, ' '));
+		
+		//amount
+		if(!"1".equals(ptq.getReversalFlag())){
+			subTotAppPymtAmt = subTotAppPymtAmt.add((BigDecimal)resultCalcStat.get(Constant.TOTAL_APP_PYMT_AMT));
+			subTotAppRefundAmt = subTotAppRefundAmt.add((BigDecimal)resultCalcStat.get(Constant.TOTAL_APP_REFUND_AMT));
+			subTotAppCheckAmt = subTotAppCheckAmt.add((BigDecimal)resultCalcStat.get(Constant.TOTAL_APP_CHECK_AMT));
+			subTotDecPymtAmt = subTotDecPymtAmt.add((BigDecimal)resultCalcStat.get(Constant.TOTAL_REJ_PYMT_AMT));
+			subTotDecRefundAmt = subTotDecRefundAmt.add((BigDecimal)resultCalcStat.get(Constant.TOTAL_REJ_REFUND_AMT));
+			subTotDecCheckAmt = subTotDecCheckAmt.add((BigDecimal)resultCalcStat.get(Constant.TOTAL_REJ_CHECK_AMT));
+			subTotSpnPymtAmt = subTotSpnPymtAmt.add((BigDecimal)resultCalcStat.get(Constant.TOTAL_SPN_PYMT_AMT));
+			subTotSpnRefundAmt = subTotSpnRefundAmt.add((BigDecimal)resultCalcStat.get(Constant.TOTAL_SPN_REFUND_AMT));
+			subTotSpnCheckAmt = subTotSpnCheckAmt.add((BigDecimal)resultCalcStat.get(Constant.TOTAL_SPN_CHECK_AMT));
 		}
-		// jumlah txn
-		subTotAppPymt = subTotAppPymt + (int) resultCalcStat.get(Constant.TOTAL_APP_PYMT);
-		subTotAppRefund = subTotAppRefund + (int) resultCalcStat.get(Constant.TOTAL_APP_REFUND);
-		subTotAppCheck = subTotAppCheck + (int) resultCalcStat.get(Constant.TOTAL_APP_CHECK);
-		subTotDecPymt = subTotDecPymt + (int) resultCalcStat.get(Constant.TOTAL_REJ_PYMT);
-		subTotDecRefund = subTotDecRefund + (int) resultCalcStat.get(Constant.TOTAL_REJ_REFUND);
-		subTotDecCheck = subTotDecCheck + (int) resultCalcStat.get(Constant.TOTAL_REJ_CHECK);
-		subTotSpnPymt = subTotSpnPymt + (int) resultCalcStat.get(Constant.TOTAL_SPN_PYMT);
-		subTotSpnRefund = subTotSpnRefund + (int) resultCalcStat.get(Constant.TOTAL_SPN_REFUND);
-		subTotSpnCheck = subTotSpnCheck + (int) resultCalcStat.get(Constant.TOTAL_SPN_CHECK);
-
-		Configuration.writeLog(fileName, str.toString());
-
+		//jumlah txn
+		subTotAppPymt = subTotAppPymt + (int)resultCalcStat.get(Constant.TOTAL_APP_PYMT);
+		subTotAppRefund = subTotAppRefund + (int)resultCalcStat.get(Constant.TOTAL_APP_REFUND);
+		subTotAppCheck = subTotAppCheck + (int)resultCalcStat.get(Constant.TOTAL_APP_CHECK);
+		subTotDecPymt = subTotDecPymt + (int)resultCalcStat.get(Constant.TOTAL_REJ_PYMT);
+		subTotDecRefund = subTotDecRefund + (int)resultCalcStat.get(Constant.TOTAL_REJ_REFUND);
+		subTotDecCheck = subTotDecCheck + (int)resultCalcStat.get(Constant.TOTAL_REJ_CHECK);
+		subTotSpnPymt = subTotSpnPymt + (int)resultCalcStat.get(Constant.TOTAL_SPN_PYMT);
+		subTotSpnRefund = subTotSpnRefund + (int)resultCalcStat.get(Constant.TOTAL_SPN_REFUND);
+		subTotSpnCheck = subTotSpnCheck + (int)resultCalcStat.get(Constant.TOTAL_SPN_CHECK);
+		
+		Writer.writeLog(fileName, str.toString());
+		
 		StringBuilder strRaw = new StringBuilder();
 		strRaw.append("\r\n");
-		strRaw.append(FormatterUtil.getPadRight(rsBankQrAcq.getBankQrDesc(), 34, ' '));
-		strRaw.append(FormatterUtil.getReportRawDateNow());
-		strRaw.append(FormatterUtil.getPadLeft(String.valueOf(rawCounter), 9, '0'));
-		strRaw.append(FormatterUtil.formatDateStringRptRaw(ptq.getTransactionDate()));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getTransactionTime(), 6, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getProcCode(), 2, ' '));
-		strRaw.append(FormatterUtil.getPadRight(MTI, 4, ' '));
-		strRaw.append(FormatterUtil.getPadRight(
-				"26".equals(ptq.getProcCode().substring(0, 2)) || "36".equals(ptq.getProcCode().substring(0, 2))
-						? ptq.getFromAccountId() : ptq.getPan(),
-				19, ' '));
-		strRaw.append(FormatterUtil.getPadLeft(String.valueOf(ptq.getAmount() == null ? 0 : ptq.getAmount()), 12, '0'));
-		strRaw.append(String.valueOf(ptq.getConvenienceFee() == null ? FormatterUtil.spaceFiller(1)
-				: ptq.getConvenienceFee().substring(0, 1)));
-		strRaw.append(FormatterUtil.getPadLeft(
-				String.valueOf(ptq.getConvenienceFee() == null ? 0 : ptq.getConvenienceFee().substring(2)), 11, '0'));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getRtCode(), 4, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getAuthResp(), 6, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getStan(), 6, ' '));
-		strRaw.append(FormatterUtil.getPadRight((String) resultCalcStat.get(Constant.REPORT_STATUS_QR), 3, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getRspCode().trim(), 2, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getReversalCode(), 2, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getRetrievalReferenceNr(), 12, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getTerminalId(), 16, ' '));
-		strRaw.append(FormatterUtil.getPadRight(
-				"26".equals(ptq.getProcCode().substring(0, 2)) || "36".equals(ptq.getProcCode().substring(0, 2))
-						? ptq.getPan() : ptq.getFromAccountId(),
-				19, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getMerchantCategory(), 4, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getInvoiceData(), 20, ' '));
-		strRaw.append(FormatterUtil.getPadRight(ptq.getMerchantNameLoc().trim(), 25, ' '));
-		Configuration.writeLog(fileNameRaw, strRaw.toString());
+		strRaw.append(FDUtil.getPadRight(rsBankQrAcq.getBankQrDesc(), 34, ' '));
+		strRaw.append(FDUtil.getReportRawDateNow());
+		strRaw.append(FDUtil.getPadLeft(String.valueOf(rawCounter), 9, '0'));
+		strRaw.append(FDUtil.formatDateStringRptRaw(ptq.getTransactionDate()));
+		strRaw.append(FDUtil.getPadRight(ptq.getTransactionTime(),6, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getProcCode(), 2, ' '));
+		strRaw.append(FDUtil.getPadRight(MTI, 4, ' '));
+		strRaw.append(FDUtil.getPadRight("26".equals(ptq.getProcCode().substring(0, 2)) || "36".equals(ptq.getProcCode().substring(0,2))?ptq.getFromAccountId():ptq.getPan(), 19, ' '));
+		strRaw.append(FDUtil.getPadLeft(String.valueOf( ptq.getAmount()==null ? 0 : ptq.getAmount()), 12, '0'));
+		strRaw.append(String.valueOf(ptq.getConvenienceFee()==null ? FDUtil.spaceFiller(1) : ptq.getConvenienceFee().substring(0,1)));
+		strRaw.append(FDUtil.getPadLeft(String.valueOf( ptq.getConvenienceFee()==null ? 0 : ptq.getConvenienceFee().substring(2)), 11, '0'));
+		strRaw.append(FDUtil.getPadRight(ptq.getRtCode(), 4, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getAuthResp(), 6, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getStan(), 6, ' '));
+		strRaw.append(FDUtil.getPadRight((String)resultCalcStat.get(Constant.REPORT_STATUS_QR), 3, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getRspCode().trim(), 2, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getReversalCode(), 2, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getRetrievalReferenceNr(), 12, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getTerminalId(), 16, ' '));
+		strRaw.append(FDUtil.getPadRight("26".equals(ptq.getProcCode().substring(0,2)) || "36".equals(ptq.getProcCode().substring(0,2))?ptq.getPan():ptq.getFromAccountId(), 19, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getMerchantCategory(), 4, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getInvoiceData(), 20, ' '));
+		strRaw.append(FDUtil.getPadRight(ptq.getMerchantNameLoc().trim(), 25, ' '));
+		Writer.writeLog(fileNameRaw, strRaw.toString());
 	}
 
-	// RESET ALL CALCULATION
-	public static void resetTotal() {
+//STORE ZERO VALUES
+	public static void storeZero(RsQrSum rsQrSum, BigDecimal zeroValue)
+	{
+		rsQrSum.setQrsumSwitchInterFeePymtAmt(zero);
+		rsQrSum.setQrsumSwitchInterFeeRefundAmt(zero);	
+		rsQrSum.setQrsumInterFeePymtAmt(zero);
+		rsQrSum.setQrsumInterFeeRefundAmt(zero);
+		rsQrSum.setQrsumSwitchFeePymtAmt(zero);
+		rsQrSum.setQrsumSwitchFeeRefundAmt(zero);
+		rsQrSum.setQrsumServicePymtAmt(zero);
+		rsQrSum.setQrsumServiceRefundAmt(zero);
+		rsQrSum.setQrsumStandardPymtAmt(zero);
+		rsQrSum.setQrsumStandardRefundAmt(zero);
+		rsQrSum.setQrsumSwitchInterFeePymtAmtSus(zero);
+		rsQrSum.setQrsumSwitchInterFeeRefundAmtSus(zero);
+		rsQrSum.setQrsumInterFeePymtAmtSus(zero);
+		rsQrSum.setQrsumInterFeeRefundAmtSus(zero);
+		rsQrSum.setQrsumSwitchFeePymtAmtSus(zero);
+		rsQrSum.setQrsumSwitchFeeRefundAmtSus(zero);
+		rsQrSum.setQrsumServicePymtAmtSus(zero);
+		rsQrSum.setQrsumServiceRefundAmtSus(zero);
+		rsQrSum.setQrsumStandardPymtAmtSus(zero);
+		rsQrSum.setQrsumStandardRefundAmtSus(zero);
+	}
+	
+//RESET ALL CALCULATION
+	public static void resetTotal()
+	{
 		subTotAppPymt = 0;
 		subTotAppRefund = 0;
 		subTotAppCheck = 0;
