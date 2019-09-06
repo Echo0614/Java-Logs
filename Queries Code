@@ -1,0 +1,118 @@
+//GET RS QRSUM			
+						RsQrSumPK rsQrSumPK = new RsQrSumPK();
+						rsQrSumPK.setQrsumDate(prevDate.substring(2));
+						rsQrSumPK.setQrsumIssfiid(rsBankQrIss.getBankQrFiidIss());
+						rsQrSumPK.setQrsumAcqfiid(rsBankQrAcq.getBankQrFiidAcq());
+						rsQrSumPK.setQrsumRptType("I");
+						
+						RsQrSum rsQrSum = null;
+						
+						Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(RsQrSum.class);
+						ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).buildServiceRegistry();
+						SessionFactory sf = con.buildSessionFactory(reg);
+						
+						Session select = sf.openSession();
+						select.beginTransaction();
+						
+						try{
+						Query querySelect = select.createQuery("FROM RS_QRSUM WHERE pk = 'rsQrSumPK'");
+						querySelect.setParameter("rsQrSumPK", rsQrSumPK);
+						
+						rsQrSum = (RsQrSum)querySelect.uniqueResult(); 
+						select.getTransaction().commit();
+						select.close();
+						
+						}catch(Exception e)
+						{
+							System.out.println("No Value Found");
+							throw e;
+						}
+						
+//IF NULL INSERT						
+						if(rsQrSum == null)
+						{
+							Session insert = sf.openSession();
+							insert.beginTransaction();
+							
+							RsQrSumPK rsQrSumNewPK = new RsQrSumPK();
+							rsQrSumNewPK.setQrsumDate(prevDate.substring(2));
+							rsQrSumNewPK.setQrsumIssfiid(rsBankQrIss.getBankQrFiidIss());
+							rsQrSumNewPK.setQrsumAcqfiid(rsBankQrAcq.getBankQrFiidAcq());
+							rsQrSumNewPK.setQrsumRptType("I");							
+							
+							RsQrSum rsQrSumNew = new RsQrSum();
+							rsQrSumNew.setPk(rsQrSumNewPK);
+							rsQrSumNew.setQrsumAppPymt(subTotAppPymt);
+							rsQrSumNew.setQrsumAppRefund(subTotAppRefund);
+							rsQrSumNew.setQrsumAppCheck(subTotAppCheck);
+							rsQrSumNew.setQrsumDecPymt(subTotDecPymt);
+							rsQrSumNew.setQrsumDecRefund(subTotDecRefund);
+							rsQrSumNew.setQrsumDecCheck(subTotDecCheck);
+							rsQrSumNew.setQrsumSpnPymt(subTotSpnPymt);
+							rsQrSumNew.setQrsumSpnRefund(subTotSpnRefund);
+							rsQrSumNew.setQrsumSpnCheck(subTotSpnCheck);	
+							rsQrSumNew.setQrsumAppPymtAmt(subTotAppPymtAmt);
+							rsQrSumNew.setQrsumAppRefundAmt(subTotAppRefundAmt);
+							rsQrSumNew.setQrsumAppCheckAmt(subTotAppCheckAmt);
+							rsQrSumNew.setQrsumDecPymtAmt(subTotDecPymtAmt);
+							rsQrSumNew.setQrsumDecRefundAmt(subTotDecRefundAmt);
+							rsQrSumNew.setQrsumDecCheckAmt(subTotDecCheckAmt);
+							rsQrSumNew.setQrsumSpnPymtAmt(subTotSpnPymtAmt);
+							rsQrSumNew.setQrsumSpnRefundAmt(subTotSpnRefundAmt);
+							rsQrSumNew.setQrsumSpnCheckAmt(subTotSpnCheckAmt);
+							storeZero(rsQrSumNew, zero);
+							
+							insert.save(rsQrSumNew);
+							insert.getTransaction().commit();
+							insert.close();
+						}
+//ELSE UPDATE
+						else
+						{
+							Session update = sf.openSession();
+							update.beginTransaction();
+							
+							Query queryUpdate = update.createQuery
+							("UPDATE RS_QRSUM SET QRSUM_APP_PYMT = 'appPymt', QRSUM_APP_REFUND = 'appRefund', QRSUM_APP_CHECK = 'appCheck', "
+										       + "QRSUM_DEC_PYMT = 'decPymt', QRSUM_DEC_REFUND = 'decRefund', QRSUM_DEC_CHECK = 'decCheck', "
+								               + "QRSUM_SPN_PYMT = 'spnPymt', QRSUM_SPN_REFUND = 'spnRefund', QRSUM_SPN_CHECK = 'spnCheck', "
+								               + "QRSUM_APP_PYMT_AMT = 'appPymtAmt', QRSUM_APP_REFUND_AMT = 'appRefundAmt', QRSUM_APP_CHECK_AMT = 'appCheckAmt', "
+								               + "QRSUM_DEC_PYMT_AMT = 'decPymtAmt', QRSUM_DEC_REFUND_AMT = 'decRefundAmt', QRSUM_DEC_CHECK_AMT = 'decCheckAmt', "
+								               + "QRSUM_SPN_PYMT_AMT = 'spnPymtAmt', QRSUM_SPN_REFUND_AMT = 'spnRefundAmt', QRSUM_SPN_CHECK_AMT = 'spnCheckAmt', "
+								               + "WHERE QRSUM_DATE = 'qrsumDate' AND QRSUM_ISSFIID = 'issFiid' AND QRSUM_ACQFIID = 'acqFiid' AND QRSUM_RPT_TYPE = 'rptType'");
+							
+							queryUpdate.setParameter("qrsumDate", prevDate.substring(2));
+							queryUpdate.setParameter("issFiid", rsBankQrIss.getBankQrFiidIss());
+							queryUpdate.setParameter("acqFiid", rsBankQrAcq.getBankQrFiidAcq());
+							queryUpdate.setParameter("rptType", "I");
+							queryUpdate.setParameter("appPymt", subTotAppPymt);	
+							queryUpdate.setParameter("appRefund", subTotAppRefund);	
+							queryUpdate.setParameter("appCheck", subTotAppCheck);	
+							queryUpdate.setParameter("decPymt", subTotDecPymt);
+							queryUpdate.setParameter("decRefund", subTotDecRefund);
+							queryUpdate.setParameter("decCheck", subTotDecCheck);
+							queryUpdate.setParameter("spnPymt", subTotSpnPymt);
+							queryUpdate.setParameter("spnRefund", subTotSpnRefund);
+							queryUpdate.setParameter("spnCheck", subTotSpnCheck);
+							
+							queryUpdate.setParameter("appPymtAmt", subTotAppPymtAmt);
+							queryUpdate.setParameter("appRefundAmt", subTotAppRefundAmt);
+							queryUpdate.setParameter("appCheckAmt", subTotAppCheckAmt);
+							queryUpdate.setParameter("decPymtAmt", subTotDecPymtAmt);
+							queryUpdate.setParameter("decRefundAmt", subTotDecRefundAmt);
+							queryUpdate.setParameter("decCheckAmt", subTotDecCheckAmt);
+							queryUpdate.setParameter("spnPymtAmt", subTotSpnPymtAmt);
+							queryUpdate.setParameter("spnRefundAmt", subTotSpnRefundAmt);
+							queryUpdate.setParameter("spnCheckAmt", subTotSpnCheckAmt);
+							
+							update.update(rsQrSum);
+							update.getTransaction().commit();
+							update.close();
+						}	
+					}
+				}
+				log.info("COMPLETE CREATE REPORT QR Q1 - ISSUER: " + rsBankQrIss.getBankQrFiidIss() + " AND ACQUIRER: " + rsBankQrAcq.getBankQrFiidAcq());
+			} catch (Exception e) {
+				log.error("CREATE REPORT QR Q1 FAILED");
+			}
+		}
