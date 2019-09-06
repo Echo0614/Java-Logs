@@ -1,0 +1,541 @@
+package Database;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="RS_QRSUM")
+public class RsQrSum implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	@EmbeddedId
+	private RsQrSumPK pk;
+	
+	@Column(name = "QRSUM_APP_PYMT", length = 10)
+	private Long qrsumAppPymt;
+	
+	@Column(name = "QRSUM_APP_REFUND", length = 10)
+	private Long qrsumAppRefund;
+	
+	@Column(name = "QRSUM_APP_CHECK", length = 10)
+	private Long qrsumAppCheck;
+	
+	@Column(name = "QRSUM_DEC_PYMT", length = 10)
+	private Long qrsumDecPymt;
+	
+	@Column(name = "QRSUM_DEC_REFUND", length = 10)
+	private Long qrsumDecRefund;
+	
+	@Column(name = "QRSUM_DEC_CHECK", length = 10)
+	private Long qrsumDecCheck;
+	//new
+	@Column(name = "QRSUM_SPN_PYMT", length = 10)
+	private Long qrsumSpnPymt;
+	
+	@Column(name = "QRSUM_SPN_REFUND", length = 10)
+	private Long qrsumSpnRefund;
+	
+	@Column(name = "QRSUM_SPN_CHECK", length = 10)
+	private Long qrsumSpnCheck;
+	//
+	@Column(name = "QRSUM_APP_PYMT_AMT", length = 20)
+	private BigDecimal qrsumAppPymtAmt;
+	
+	@Column(name = "QRSUM_APP_REFUND_AMT", length = 20)
+	private BigDecimal qrsumAppRefundAmt;
+	
+	@Column(name = "QRSUM_APP_CHECK_AMT", length = 20)
+	private BigDecimal qrsumAppCheckAmt;
+	
+	@Column(name = "QRSUM_DEC_PYMT_AMT", length = 20)
+	private BigDecimal qrsumDecPymtAmt;
+	
+	@Column(name = "QRSUM_DEC_REFUND_AMT", length = 20)
+	private BigDecimal qrsumDecRefundAmt;
+	
+	@Column(name = "QRSUM_DEC_CHECK_AMT", length = 20)
+	private BigDecimal qrsumDecCheckAmt;
+	//new
+	@Column(name = "QRSUM_SPN_PYMT_AMT", length = 20)
+	private BigDecimal qrsumSpnPymtAmt;
+	
+	@Column(name = "QRSUM_SPN_REFUND_AMT", length = 20)
+	private BigDecimal qrsumSpnRefundAmt;
+	
+	@Column(name = "QRSUM_SPN_CHECK_AMT", length = 20)
+	private BigDecimal qrsumSpnCheckAmt;
+	
+	@Column(name = "QRSUM_SWITCH_INTER_FEE_PYMT_AMT", length = 20)
+	private BigDecimal qrsumSwitchInterFeePymtAmt;
+	
+	@Column(name = "QRSUM_SWITCH_INTER_FEE_REFUND_AMT", length = 20)
+	private BigDecimal qrsumSwitchInterFeeRefundAmt;
+	
+	@Column(name = "QRSUM_INTER_FEE_PYMT_AMT", length = 20)
+	private BigDecimal qrsumInterFeePymtAmt;
+	
+	@Column(name = "QRSUM_INTER_FEE_REFUND_AMT", length = 20)
+	private BigDecimal qrsumInterFeeRefundAmt;
+	
+	@Column(name = "QRSUM_SWITCH_FEE_PYMT_AMT", length = 20)
+	private BigDecimal qrsumSwitchFeePymtAmt;
+	
+	@Column(name = "QRSUM_SWITCH_FEE_REFUND_AMT", length = 20)
+	private BigDecimal qrsumSwitchFeeRefundAmt;
+	
+	@Column(name = "QRSUM_SERVICE_PYMT_AMT", length = 20)
+	private BigDecimal qrsumServicePymtAmt;
+	
+	@Column(name = "QRSUM_SERVICE_REFUND_AMT", length = 20)
+	private BigDecimal qrsumServiceRefundAmt;
+	
+	@Column(name = "QRSUM_STANDARD_PYMT_AMT", length = 20)
+	private BigDecimal qrsumStandardPymtAmt;
+	
+	@Column(name = "QRSUM_STANDARD_REFUND_AMT", length = 20)
+	private BigDecimal qrsumStandardRefundAmt;
+	
+	////////pecah suspend
+	@Column(name = "QRSUM_SWITCH_INTER_FEE_PYMT_AMT_SUS", length = 20)
+	private BigDecimal qrsumSwitchInterFeePymtAmtSus;
+	
+	@Column(name = "QRSUM_SWITCH_INTER_FEE_REFUND_AMT_SUS", length = 20)
+	private BigDecimal qrsumSwitchInterFeeRefundAmtSus;
+	
+	@Column(name = "QRSUM_INTER_FEE_PYMT_AMT_SUS", length = 20)
+	private BigDecimal qrsumInterFeePymtAmtSus;
+	
+	@Column(name = "QRSUM_INTER_FEE_REFUND_AMT_SUS", length = 20)
+	private BigDecimal qrsumInterFeeRefundAmtSus;
+	
+	@Column(name = "QRSUM_SWITCH_FEE_PYMT_AMT_SUS", length = 20)
+	private BigDecimal qrsumSwitchFeePymtAmtSus;
+	
+	@Column(name = "QRSUM_SWITCH_FEE_REFUND_AMT_SUS", length = 20)
+	private BigDecimal qrsumSwitchFeeRefundAmtSus;
+	
+	@Column(name = "QRSUM_SERVICE_PYMT_AMT_SUS", length = 20)
+	private BigDecimal qrsumServicePymtAmtSus;
+	
+	@Column(name = "QRSUM_SERVICE_REFUND_AMT_SUS", length = 20)
+	private BigDecimal qrsumServiceRefundAmtSus;
+	
+	@Column(name = "QRSUM_STANDARD_PYMT_AMT_SUS", length = 20)
+	private BigDecimal qrsumStandardPymtAmtSus;
+	
+	@Column(name = "QRSUM_STANDARD_REFUND_AMT_SUS", length = 20)
+	private BigDecimal qrsumStandardRefundAmtSus;
+////////////////suspend
+	
+	@Column(name = "MOD_USER", length = 20)
+	private String modUser;
+	
+	@Column(name = "MOD_DATE")
+	private Date modDate;
+	
+	@Version
+	@Column(name = "VERSION")
+	private Long Version;
+	
+	public RsQrSum(){
+		
+	}
+
+	public RsQrSumPK getPk() {
+		return this.pk;
+	}
+
+	public void setPk(RsQrSumPK pk) {
+		this.pk = pk;
+	}
+	
+	public Long getQrsumAppPymt() {
+		return qrsumAppPymt;
+	}
+
+	public void setQrsumAppPymt(Long qrsumAppPymt) {
+		this.qrsumAppPymt = qrsumAppPymt;
+	}
+
+	public Long getQrsumAppRefund() {
+		return qrsumAppRefund;
+	}
+
+	public void setQrsumAppRefund(Long qrsumAppRefund) {
+		this.qrsumAppRefund = qrsumAppRefund;
+	}
+
+	public Long getQrsumAppCheck() {
+		return qrsumAppCheck;
+	}
+
+	public void setQrsumAppCheck(Long qrsumAppCheck) {
+		this.qrsumAppCheck = qrsumAppCheck;
+	}
+
+	public Long getQrsumDecPymt() {
+		return qrsumDecPymt;
+	}
+
+	public void setQrsumDecPymt(Long qrsumDecPymt) {
+		this.qrsumDecPymt = qrsumDecPymt;
+	}
+
+	public Long getQrsumDecRefund() {
+		return qrsumDecRefund;
+	}
+
+	public void setQrsumDecRefund(Long qrsumDecRefund) {
+		this.qrsumDecRefund = qrsumDecRefund;
+	}
+
+	public Long getQrsumDecCheck() {
+		return qrsumDecCheck;
+	}
+
+	public void setQrsumDecCheck(Long qrsumDecCheck) {
+		this.qrsumDecCheck = qrsumDecCheck;
+	}
+
+	public BigDecimal getQrsumAppPymtAmt() {
+		return qrsumAppPymtAmt;
+	}
+
+	public void setQrsumAppPymtAmt(BigDecimal qrsumAppPymtAmt) {
+		this.qrsumAppPymtAmt = qrsumAppPymtAmt;
+	}
+	
+	public BigDecimal getQrsumAppRefundAmt() {
+		return qrsumAppRefundAmt;
+	}
+
+	public void setQrsumAppRefundAmt(BigDecimal qrsumAppRefundAmt) {
+		this.qrsumAppRefundAmt = qrsumAppRefundAmt;
+	}
+	
+	public BigDecimal getQrsumAppCheckAmt() {
+		return qrsumAppCheckAmt;
+	}
+
+	public void setQrsumAppCheckAmt(BigDecimal qrsumAppCheckAmt) {
+		this.qrsumAppCheckAmt = qrsumAppCheckAmt;
+	}
+	
+	public BigDecimal getQrsumDecPymtAmt() {
+		return qrsumDecPymtAmt;
+	}
+
+	public void setQrsumDecPymtAmt(BigDecimal qrsumDecPymtAmt) {
+		this.qrsumDecPymtAmt = qrsumDecPymtAmt;
+	}
+	
+	public BigDecimal getQrsumDecRefundAmt() {
+		return qrsumDecRefundAmt;
+	}
+
+	public void setQrsumDecRefundAmt(BigDecimal qrsumDecRefundAmt) {
+		this.qrsumDecRefundAmt = qrsumDecRefundAmt;
+	}
+	
+	public BigDecimal getQrsumDecCheckAmt() {
+		return qrsumDecCheckAmt;
+	}
+
+	public void setQrsumDecCheckAmt(BigDecimal qrsumDecCheckAmt) {
+		this.qrsumDecCheckAmt = qrsumDecCheckAmt;
+	}
+	
+	
+	
+	//public BigDecimal getQrsumTotAppAmt() {
+	//	return qrsumTotAppAmt;
+	//}
+
+	//public void setQrsumTotAppAmt(BigDecimal qrsumTotAppAmt) {
+	//	this.qrsumTotAppAmt = qrsumTotAppAmt;
+	//}
+	
+	public BigDecimal getQrsumInterFeePymtAmt() {
+		return qrsumInterFeePymtAmt;
+	}
+	
+	public void setQrsumInterFeePymtAmt(BigDecimal qrsumInterFeePymtAmt) {
+		this.qrsumInterFeePymtAmt = qrsumInterFeePymtAmt;
+	}
+	
+	public BigDecimal getQrsumInterFeeRefundAmt() {
+		return qrsumInterFeeRefundAmt;
+	}
+	
+	public void setQrsumInterFeeRefundAmt(BigDecimal qrsumInterFeeRefundAmt) {
+		this.qrsumInterFeeRefundAmt = qrsumInterFeeRefundAmt;
+	}
+	
+	public BigDecimal getQrsumSwitchFeePymtAmt() {
+		return qrsumSwitchFeePymtAmt;
+	}
+
+	public void setQrsumSwitchFeePymtAmt(BigDecimal qrsumSwitchFeePymtAmt) {
+		this.qrsumSwitchFeePymtAmt = qrsumSwitchFeePymtAmt;
+	}
+	
+	public BigDecimal getQrsumSwitchFeeRefundAmt() {
+		return qrsumSwitchFeeRefundAmt;
+	}
+
+	public void setQrsumSwitchFeeRefundAmt(BigDecimal qrsumSwitchFeeRefundAmt) {
+		this.qrsumSwitchFeeRefundAmt = qrsumSwitchFeeRefundAmt;
+	}
+	
+	
+	public Long getQrsumSpnPymt() {
+		return qrsumSpnPymt;
+	}
+
+	public void setQrsumSpnPymt(Long qrsumSpnPymt) {
+		this.qrsumSpnPymt = qrsumSpnPymt;
+	}
+
+	public Long getQrsumSpnRefund() {
+		return qrsumSpnRefund;
+	}
+
+	public void setQrsumSpnRefund(Long qrsumSpnRefund) {
+		this.qrsumSpnRefund = qrsumSpnRefund;
+	}
+
+	public Long getQrsumSpnCheck() {
+		return qrsumSpnCheck;
+	}
+
+	public void setQrsumSpnCheck(Long qrsumSpnCheck) {
+		this.qrsumSpnCheck = qrsumSpnCheck;
+	}
+
+	public BigDecimal getQrsumSpnPymtAmt() {
+		return qrsumSpnPymtAmt;
+	}
+
+	public void setQrsumSpnPymtAmt(BigDecimal qrsumSpnPymtAmt) {
+		this.qrsumSpnPymtAmt = qrsumSpnPymtAmt;
+	}
+
+	public BigDecimal getQrsumSpnRefundAmt() {
+		return qrsumSpnRefundAmt;
+	}
+
+	public void setQrsumSpnRefundAmt(BigDecimal qrsumSpnRefundAmt) {
+		this.qrsumSpnRefundAmt = qrsumSpnRefundAmt;
+	}
+
+	public BigDecimal getQrsumSpnCheckAmt() {
+		return qrsumSpnCheckAmt;
+	}
+
+	public void setQrsumSpnCheckAmt(BigDecimal qrsumSpnCheckAmt) {
+		this.qrsumSpnCheckAmt = qrsumSpnCheckAmt;
+	}
+
+	public BigDecimal getQrsumServicePymtAmt() {
+		return qrsumServicePymtAmt;
+	}
+
+	public void setQrsumServicePymtAmt(BigDecimal qrsumServicePymtAmt) {
+		this.qrsumServicePymtAmt = qrsumServicePymtAmt;
+	}
+	
+	public BigDecimal getQrsumServiceRefundAmt() {
+		return qrsumServiceRefundAmt;
+	}
+
+	public void setQrsumServiceRefundAmt(BigDecimal qrsumServiceRefundAmt) {
+		this.qrsumServiceRefundAmt = qrsumServiceRefundAmt;
+	}
+	
+	public BigDecimal getQrsumStandardPymtAmt() {
+		return qrsumStandardPymtAmt;
+	}
+
+	public void setQrsumStandardPymtAmt(BigDecimal qrsumStandardPymtAmt) {
+		this.qrsumStandardPymtAmt = qrsumStandardPymtAmt;
+	}
+	
+	public BigDecimal getQrsumStandardRefundAmt() {
+		return qrsumStandardRefundAmt;
+	}
+
+	public void setQrsumStandardRefundAmt(BigDecimal qrsumStandardRefundAmt) {
+		this.qrsumStandardRefundAmt = qrsumStandardRefundAmt;
+	}
+	
+	public BigDecimal getQrsumSwitchInterFeePymtAmt() {
+		return qrsumSwitchInterFeePymtAmt;
+	}
+
+	public void setQrsumSwitchInterFeePymtAmt(BigDecimal qrsumSwitchInterFeePymtAmt) {
+		this.qrsumSwitchInterFeePymtAmt = qrsumSwitchInterFeePymtAmt;
+	}
+
+	public BigDecimal getQrsumSwitchInterFeeRefundAmt() {
+		return qrsumSwitchInterFeeRefundAmt;
+	}
+
+	public void setQrsumSwitchInterFeeRefundAmt(
+			BigDecimal qrsumSwitchInterFeeRefundAmt) {
+		this.qrsumSwitchInterFeeRefundAmt = qrsumSwitchInterFeeRefundAmt;
+	}
+	
+	public BigDecimal getQrsumSwitchInterFeePymtAmtSus() {
+		return qrsumSwitchInterFeePymtAmtSus;
+	}
+
+	public void setQrsumSwitchInterFeePymtAmtSus(
+			BigDecimal qrsumSwitchInterFeePymtAmtSus) {
+		this.qrsumSwitchInterFeePymtAmtSus = qrsumSwitchInterFeePymtAmtSus;
+	}
+
+	public BigDecimal getQrsumSwitchInterFeeRefundAmtSus() {
+		return qrsumSwitchInterFeeRefundAmtSus;
+	}
+
+	public void setQrsumSwitchInterFeeRefundAmtSus(
+			BigDecimal qrsumSwitchInterFeeRefundAmtSus) {
+		this.qrsumSwitchInterFeeRefundAmtSus = qrsumSwitchInterFeeRefundAmtSus;
+	}
+
+	public BigDecimal getQrsumInterFeePymtAmtSus() {
+		return qrsumInterFeePymtAmtSus;
+	}
+
+	public void setQrsumInterFeePymtAmtSus(BigDecimal qrsumInterFeePymtAmtSus) {
+		this.qrsumInterFeePymtAmtSus = qrsumInterFeePymtAmtSus;
+	}
+
+	public BigDecimal getQrsumInterFeeRefundAmtSus() {
+		return qrsumInterFeeRefundAmtSus;
+	}
+
+	public void setQrsumInterFeeRefundAmtSus(BigDecimal qrsumInterFeeRefundAmtSus) {
+		this.qrsumInterFeeRefundAmtSus = qrsumInterFeeRefundAmtSus;
+	}
+
+	public BigDecimal getQrsumSwitchFeePymtAmtSus() {
+		return qrsumSwitchFeePymtAmtSus;
+	}
+
+	public void setQrsumSwitchFeePymtAmtSus(BigDecimal qrsumSwitchFeePymtAmtSus) {
+		this.qrsumSwitchFeePymtAmtSus = qrsumSwitchFeePymtAmtSus;
+	}
+
+	public BigDecimal getQrsumSwitchFeeRefundAmtSus() {
+		return qrsumSwitchFeeRefundAmtSus;
+	}
+
+	public void setQrsumSwitchFeeRefundAmtSus(BigDecimal qrsumSwitchFeeRefundAmtSus) {
+		this.qrsumSwitchFeeRefundAmtSus = qrsumSwitchFeeRefundAmtSus;
+	}
+
+	public BigDecimal getQrsumServicePymtAmtSus() {
+		return qrsumServicePymtAmtSus;
+	}
+
+	public void setQrsumServicePymtAmtSus(BigDecimal qrsumServicePymtAmtSus) {
+		this.qrsumServicePymtAmtSus = qrsumServicePymtAmtSus;
+	}
+
+	public BigDecimal getQrsumServiceRefundAmtSus() {
+		return qrsumServiceRefundAmtSus;
+	}
+
+	public void setQrsumServiceRefundAmtSus(BigDecimal qrsumServiceRefundAmtSus) {
+		this.qrsumServiceRefundAmtSus = qrsumServiceRefundAmtSus;
+	}
+
+	public BigDecimal getQrsumStandardPymtAmtSus() {
+		return qrsumStandardPymtAmtSus;
+	}
+
+	public void setQrsumStandardPymtAmtSus(BigDecimal qrsumStandardPymtAmtSus) {
+		this.qrsumStandardPymtAmtSus = qrsumStandardPymtAmtSus;
+	}
+
+	public BigDecimal getQrsumStandardRefundAmtSus() {
+		return qrsumStandardRefundAmtSus;
+	}
+
+	public void setQrsumStandardRefundAmtSus(BigDecimal qrsumStandardRefundAmtSus) {
+		this.qrsumStandardRefundAmtSus = qrsumStandardRefundAmtSus;
+	}
+
+	public String getModUser() {
+		return modUser;
+	}
+
+	public void setModUser(String modUser) {
+		this.modUser = modUser;
+	}
+
+	public Date getModDate() {
+		return modDate;
+	}
+
+	public void setModDate(Date modDate) {
+		this.modDate = modDate;
+	}
+
+	public Long getVersion() {
+		return Version;
+	}
+
+	public void setVersion(Long version) {
+		Version = version;
+	}
+	
+	@Override
+	public String toString() {
+		return "RsQrSum [pk=" + pk + ", qrsumAppPymt=" + qrsumAppPymt + ", qrsumAppRefund=" + qrsumAppRefund
+				+ ", qrsumAppCheck=" + qrsumAppCheck + ", qrsumDecPymt=" + qrsumDecPymt + ", qrsumDecRefund="
+				+ qrsumDecRefund + ", qrsumDecCheck=" + qrsumDecCheck + ", qrsumSpnPymt=" + qrsumSpnPymt
+				+ ", qrsumSpnRefund=" + qrsumSpnRefund + ", qrsumSpnCheck=" + qrsumSpnCheck + ", qrsumAppPymtAmt="
+				+ qrsumAppPymtAmt + ", qrsumAppRefundAmt=" + qrsumAppRefundAmt + ", qrsumAppCheckAmt="
+				+ qrsumAppCheckAmt + ", qrsumDecPymtAmt=" + qrsumDecPymtAmt + ", qrsumDecRefundAmt=" + qrsumDecRefundAmt
+				+ ", qrsumDecCheckAmt=" + qrsumDecCheckAmt + ", qrsumSpnPymtAmt=" + qrsumSpnPymtAmt
+				+ ", qrsumSpnRefundAmt=" + qrsumSpnRefundAmt + ", qrsumSpnCheckAmt=" + qrsumSpnCheckAmt
+				+ ", qrsumSwitchInterFeePymtAmt=" + qrsumSwitchInterFeePymtAmt + ", qrsumSwitchInterFeeRefundAmt="
+				+ qrsumSwitchInterFeeRefundAmt + ", qrsumInterFeePymtAmt=" + qrsumInterFeePymtAmt
+				+ ", qrsumInterFeeRefundAmt=" + qrsumInterFeeRefundAmt + ", qrsumSwitchFeePymtAmt="
+				+ qrsumSwitchFeePymtAmt + ", qrsumSwitchFeeRefundAmt=" + qrsumSwitchFeeRefundAmt
+				+ ", qrsumServicePymtAmt=" + qrsumServicePymtAmt + ", qrsumServiceRefundAmt=" + qrsumServiceRefundAmt
+				+ ", qrsumStandardPymtAmt=" + qrsumStandardPymtAmt + ", qrsumStandardRefundAmt="
+				+ qrsumStandardRefundAmt + ", qrsumSwitchInterFeePymtAmtSus=" + qrsumSwitchInterFeePymtAmtSus
+				+ ", qrsumSwitchInterFeeRefundAmtSus=" + qrsumSwitchInterFeeRefundAmtSus + ", qrsumInterFeePymtAmtSus="
+				+ qrsumInterFeePymtAmtSus + ", qrsumInterFeeRefundAmtSus=" + qrsumInterFeeRefundAmtSus
+				+ ", qrsumSwitchFeePymtAmtSus=" + qrsumSwitchFeePymtAmtSus + ", qrsumSwitchFeeRefundAmtSus="
+				+ qrsumSwitchFeeRefundAmtSus + ", qrsumServicePymtAmtSus=" + qrsumServicePymtAmtSus
+				+ ", qrsumServiceRefundAmtSus=" + qrsumServiceRefundAmtSus + ", qrsumStandardPymtAmtSus="
+				+ qrsumStandardPymtAmtSus + ", qrsumStandardRefundAmtSus=" + qrsumStandardRefundAmtSus + ", modUser="
+				+ modUser + ", modDate=" + modDate + ", Version=" + Version + "]";
+	}
+
+	@Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (pk != null ? pk.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if(!(object instanceof RsQrSum)) {
+            return false;
+        }
+        RsQrSum other = (RsQrSum) object;
+        if((this.pk == null && other.pk != null) || (this.pk != null && !this.pk.equals(other.pk))) {
+            return false;
+        }
+        return true;
+    }	
+}
